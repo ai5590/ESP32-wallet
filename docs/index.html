@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="ESP32 Wallet — Solana-кошелёк как расширение браузера. Установка, обновление, загрузка сборок Chromium и Firefox."
+    />
+    <title>ESP32 Wallet — сайт установки и обновления</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="logo" href="#top">ESP32 Wallet</a>
+        <nav class="nav">
+          <a href="#install">Установка</a>
+          <a href="#update">Обновление</a>
+          <a href="#manual">Ручная загрузка</a>
+          <a href="#faq">FAQ</a>
+        </nav>
+      </div>
+    </header>
+
+    <main id="top" class="page">
+      <section class="hero card gradient">
+        <p class="badge">Solana Browser Extension</p>
+        <h1>ESP32 Wallet</h1>
+        <p class="subtitle">
+          Solana-кошелёк для браузера с архитектурой под внешний ключевой модуль на ESP32.
+          <br />
+          Этот сайт даёт установку, обновление и доступ к файлам сборки прямо из GitHub Pages.
+        </p>
+        <div class="actions">
+          <a id="smartInstallLink" class="btn primary" href="#" target="_blank" rel="noopener noreferrer">
+            Установить для моего браузера
+          </a>
+          <a id="latestReleaseLink" class="btn secondary" href="#" target="_blank" rel="noopener noreferrer">
+            Открыть последний релиз
+          </a>
+        </div>
+        <p id="browserLabel" class="muted compact">Определяем браузер...</p>
+      </section>
+
+      <section id="install" class="card">
+        <h2>Установка расширения</h2>
+        <p class="muted">
+          Основной вариант для пользователей: установка из магазина расширений (Chrome Web Store, AMO, Edge Add-ons, Opera Add-ons).
+          Если публикация в сторе ещё не завершена, используйте ручную установку из файлов ниже.
+        </p>
+        <div class="grid two">
+          <article class="mini">
+            <h3>Через магазин расширений</h3>
+            <div class="list">
+              <a id="installChrome" href="#" target="_blank" rel="noopener noreferrer">Chrome Web Store</a>
+              <a id="installFirefox" href="#" target="_blank" rel="noopener noreferrer">Firefox Add-ons (AMO)</a>
+              <a id="installEdge" href="#" target="_blank" rel="noopener noreferrer">Edge Add-ons</a>
+              <a id="installOpera" href="#" target="_blank" rel="noopener noreferrer">Opera Add-ons</a>
+            </div>
+          </article>
+          <article class="mini">
+            <h3>Прямо с GitHub (ручная загрузка)</h3>
+            <p class="muted compact">Скачайте zip под ваш браузер и загрузите как unpacked/temporary extension.</p>
+            <div class="list">
+              <a id="downloadChromium" href="#">Скачать сборку Chromium (.zip)</a>
+              <a id="downloadFirefox" href="#">Скачать сборку Firefox (.zip)</a>
+            </div>
+            <p id="buildInfo" class="meta">Данные о сборках загружаются...</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="update" class="card">
+        <h2>Обновление</h2>
+        <div class="grid two">
+          <article class="mini">
+            <h3>Если установлено из магазина</h3>
+            <p class="muted compact">Обновляется автоматически через браузер.</p>
+            <a id="updateStoreLink" class="btn ghost" href="#" target="_blank" rel="noopener noreferrer">
+              Проверить страницу обновления
+            </a>
+          </article>
+          <article class="mini">
+            <h3>Если установлено вручную</h3>
+            <ol>
+              <li>Скачайте новый zip-файл со страницы выше.</li>
+              <li>Распакуйте его в новую папку.</li>
+              <li>Перезагрузите расширение в браузере и укажите новую папку/manifest.</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section id="manual" class="card">
+        <h2>Пошаговая ручная установка</h2>
+        <div class="grid two">
+          <article class="mini">
+            <h3>Chrome / Edge / Opera</h3>
+            <ol>
+              <li>Откройте страницу расширений браузера.</li>
+              <li>Включите режим разработчика.</li>
+              <li>Нажмите <code>Load unpacked</code>.</li>
+              <li>Выберите папку распакованной сборки Chromium.</li>
+            </ol>
+          </article>
+          <article class="mini">
+            <h3>Firefox</h3>
+            <ol>
+              <li>Откройте <code>about:debugging#/runtime/this-firefox</code>.</li>
+              <li>Нажмите <code>Load Temporary Add-on...</code>.</li>
+              <li>Выберите <code>manifest.json</code> из папки сборки Firefox.</li>
+            </ol>
+          </article>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>О проекте</h2>
+        <p>
+          ESP32 Wallet — минималистичный Solana-кошелёк как браузерное расширение, совместимый с Wallet Standard и legacy
+          <code>window.solana</code>. В текущей версии подпись выполняется локально в расширении.
+        </p>
+        <p class="muted compact">
+          Следующий этап: вынести хранение ключей и подпись на внешнее ESP32-устройство через отдельный transport-слой.
+        </p>
+      </section>
+
+      <section id="faq" class="card">
+        <h2>FAQ</h2>
+        <details>
+          <summary>Можно ли установить/обновить расширение полностью автоматически прямо с сайта?</summary>
+          <p>
+            Полностью бесшовная автоустановка запрещена политиками браузеров. Надёжный путь для пользователей — установка
+            через официальные магазины расширений.
+          </p>
+        </details>
+        <details>
+          <summary>Почему на сайте есть ручные zip-сборки?</summary>
+          <p>
+            Это запасной путь до публикации в сторе и для тестирования. Сайт отдаёт готовые сборки, чтобы пользователь мог
+            установить расширение вручную.
+          </p>
+        </details>
+      </section>
+
+      <footer class="footer">
+        <a href="https://github.com/ai5590/ESP32-wallet" target="_blank" rel="noopener noreferrer">GitHub репозиторий</a>
+        <span>•</span>
+        <a href="https://github.com/ai5590/ESP32-wallet/releases/latest" target="_blank" rel="noopener noreferrer">
+          Последний релиз
+        </a>
+      </footer>
+    </main>
+
+    <script src="./app.js"></script>
+  </body>
+</html>

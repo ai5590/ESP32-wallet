@@ -1,0 +1,161 @@
+:root {
+  color-scheme: light;
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #f2f6fc;
+  color: #1a2430;
+}
+
+.container {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 520px;
+  margin: 0 auto;
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.status {
+  margin: 0;
+  font-size: 12px;
+  color: #2c4b63;
+}
+
+.card {
+  background: #ffffff;
+  border: 1px solid #d3dce7;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hidden {
+  display: none;
+}
+
+.label {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  color: #5a7186;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.value {
+  display: block;
+  font-size: 12px;
+  padding: 7px;
+  border-radius: 8px;
+  border: 1px solid #d9e2ec;
+  background: #f9fbff;
+  word-break: break-all;
+}
+
+.value-text {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 8px;
+  align-items: baseline;
+  font-size: 12px;
+}
+
+.transfer {
+  border: 1px solid #cae8d8;
+  background: #f3fbf6;
+  border-radius: 8px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.transfer-title {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 700;
+  color: #0a6940;
+}
+
+.small-title {
+  margin: 0;
+  font-size: 11px;
+  color: #566b7f;
+  font-weight: 600;
+}
+
+.warning {
+  margin: 0;
+  font-size: 12px;
+  color: #8b5f00;
+}
+
+.pre {
+  margin: 0;
+  border-radius: 8px;
+  border: 1px solid #d9e2ec;
+  background: #f9fbff;
+  padding: 8px;
+  font-size: 11px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-height: 170px;
+  overflow: auto;
+}
+
+.actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+button {
+  border: none;
+  border-radius: 8px;
+  padding: 10px 12px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.primary {
+  background: #1f8f63;
+  color: #ffffff;
+}
+
+.primary:hover {
+  background: #16744f;
+}
+
+.secondary {
+  background: #e8eef6;
+  color: #21354a;
+}
+
+.secondary:hover {
+  background: #d9e4f0;
+}
+
+button:disabled {
+  opacity: 0.7;
+  cursor: default;
+}

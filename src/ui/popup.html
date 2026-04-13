@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>ESP Wallet MVP</title>
+    <link rel="stylesheet" href="./popup.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>ESP Wallet MVP</h1>
+
+      <label for="privateKey">Приватный ключ (base58)</label>
+      <textarea
+        id="privateKey"
+        rows="4"
+        placeholder="Введите base58 secret key"
+        autocomplete="off"
+        spellcheck="false"
+      ></textarea>
+
+      <button id="saveButton" type="button">Сохранить</button>
+
+      <p id="status" class="status">Проверка конфигурации...</p>
+      <p id="publicKeyLabel" class="label">Текущий публичный ключ:</p>
+      <code id="publicKey" class="value">—</code>
+      <p class="hint">Подтверждение подписи открывается в отдельном окне.</p>
+      <p id="error" class="error" role="alert"></p>
+    </main>
+
+    <script src="./popup.js"></script>
+  </body>
+</html>

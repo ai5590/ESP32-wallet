@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Подтверждение подписи</title>
+    <link rel="stylesheet" href="./confirm.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>Подтвердить действие</h1>
+
+      <p id="status" class="status">Загрузка запроса...</p>
+
+      <section class="card">
+        <p class="label">Сайт</p>
+        <code id="origin" class="value">—</code>
+      </section>
+
+      <section class="card">
+        <p class="label">Тип запроса</p>
+        <p id="method" class="value-text">—</p>
+      </section>
+
+      <section class="card">
+        <p class="label">Подписывающий аккаунт</p>
+        <code id="account" class="value">—</code>
+      </section>
+
+      <section id="transactionCard" class="card hidden">
+        <p class="label">Транзакция</p>
+        <div class="kv">
+          <span>Версия:</span>
+          <span id="txVersion">—</span>
+        </div>
+        <div class="kv">
+          <span>Fee payer:</span>
+          <code id="txFeePayer">—</code>
+        </div>
+        <div class="kv">
+          <span>Blockhash:</span>
+          <code id="txBlockhash">—</code>
+        </div>
+        <div class="kv">
+          <span>Инструкций:</span>
+          <span id="txInstructionCount">0</span>
+        </div>
+        <div id="transferBox" class="transfer hidden">
+          <p class="transfer-title">Обнаружен перевод SOL</p>
+          <div class="kv">
+            <span>От:</span>
+            <code id="transferFrom">—</code>
+          </div>
+          <div class="kv">
+            <span>Куда:</span>
+            <code id="transferTo">—</code>
+          </div>
+          <div class="kv">
+            <span>Сумма:</span>
+            <span id="transferAmount">—</span>
+          </div>
+        </div>
+        <p id="txWarning" class="warning hidden"></p>
+      </section>
+
+      <section id="messageCard" class="card hidden">
+        <p class="label">Сообщение для подписи</p>
+        <div class="kv">
+          <span>Размер:</span>
+          <span id="msgLength">0 bytes</span>
+        </div>
+        <p class="small-title">UTF-8 preview</p>
+        <pre id="msgUtf8" class="pre">—</pre>
+        <p class="small-title">Base64 preview</p>
+        <code id="msgBase64" class="value">—</code>
+      </section>
+
+      <section class="card">
+        <p class="label">Инструкции / данные</p>
+        <pre id="details" class="pre">—</pre>
+      </section>
+
+      <div class="actions">
+        <button id="rejectButton" class="secondary" type="button">Отклонить</button>
+        <button id="approveButton" class="primary" type="button">Подтвердить</button>
+      </div>
+    </main>
+
+    <script src="./confirm.js"></script>
+  </body>
+</html>

@@ -1,0 +1,283 @@
+:root {
+  --bg: #edf3fa;
+  --card: #ffffff;
+  --text: #152232;
+  --muted: #5c7287;
+  --line: #d6e0ea;
+  --primary: #15724f;
+  --primary-hover: #0f5d40;
+  --secondary: #e8eef5;
+  --secondary-hover: #dde7f1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top right, #d9e9ff 0%, transparent 42%),
+    radial-gradient(circle at bottom left, #d9f2e8 0%, transparent 35%),
+    var(--bg);
+  color: var(--text);
+  font-family: "Segoe UI", "SF Pro Text", -apple-system, sans-serif;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(10px);
+  background: #ffffffbf;
+  border-bottom: 1px solid var(--line);
+}
+
+.topbar-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.logo {
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.nav a {
+  font-size: 13px;
+  text-decoration: none;
+  color: #244058;
+  padding: 6px 8px;
+  border-radius: 8px;
+}
+
+.nav a:hover {
+  background: #e8eff7;
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 18px 16px 44px;
+  display: grid;
+  gap: 12px;
+}
+
+.hero {
+  padding: 18px;
+}
+
+.gradient {
+  background:
+    linear-gradient(160deg, #ffffff 0%, #f4f9ff 100%);
+}
+
+.badge {
+  display: inline-block;
+  margin: 0 0 10px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: #ffffffd9;
+  color: #2e4a62;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+h1 {
+  margin: 0;
+  font-size: 38px;
+  line-height: 1.1;
+}
+
+h2 {
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.subtitle {
+  margin: 10px 0 0;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--card);
+  padding: 14px;
+}
+
+.grid {
+  display: grid;
+  gap: 10px;
+}
+
+.grid.two {
+  grid-template-columns: 1fr 1fr;
+}
+
+.mini {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 12px;
+  background: #fbfdff;
+}
+
+.mini h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+
+.list {
+  display: grid;
+  gap: 7px;
+}
+
+.list a {
+  color: #184f7a;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.list a:hover {
+  text-decoration: underline;
+}
+
+.muted {
+  margin: 0 0 12px;
+  color: var(--muted);
+}
+
+.muted.compact {
+  margin-bottom: 0;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  border-radius: 10px;
+  padding: 10px 14px;
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.btn.primary {
+  color: #ffffff;
+  background: var(--primary);
+}
+
+.btn.primary:hover {
+  background: var(--primary-hover);
+}
+
+.btn.secondary {
+  color: #213244;
+  background: var(--secondary);
+}
+
+.btn.secondary:hover {
+  background: var(--secondary-hover);
+}
+
+.btn.ghost {
+  color: #1f3850;
+  border-color: var(--line);
+  background: #ffffff;
+}
+
+ol {
+  margin: 0 0 8px 18px;
+  padding: 0;
+}
+
+p {
+  margin: 0 0 8px;
+}
+
+code {
+  font-family: "SFMono-Regular", Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+
+.meta {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #566d83;
+}
+
+details {
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: #fbfdff;
+  padding: 10px;
+}
+
+details + details {
+  margin-top: 8px;
+}
+
+summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+details p {
+  margin: 8px 0 0;
+  color: #30485d;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  color: #4f677d;
+  font-size: 13px;
+  padding-top: 6px;
+}
+
+.footer a {
+  color: #1d4d73;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .grid.two {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 32px;
+  }
+
+  .topbar-inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
