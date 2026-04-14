@@ -1,12 +1,6 @@
 const LINKS = {
   releaseLatest: "https://github.com/ai5590/ESP32-wallet/releases/latest",
-  repo: "https://github.com/ai5590/ESP32-wallet",
-
-  // Вставьте прямые ссылки на карточки вашего расширения в сторах:
-  chromeStore: "https://chromewebstore.google.com/",
-  firefoxStore: "https://addons.mozilla.org/firefox/",
-  edgeStore: "https://microsoftedge.microsoft.com/addons/",
-  operaStore: "https://addons.opera.com/"
+  repo: "https://github.com/ai5590/ESP32-wallet"
 };
 
 function detectBrowser() {
@@ -16,14 +10,6 @@ function detectBrowser() {
   if (/OPR|Opera/i.test(ua)) return "opera";
   if (/Chrome/i.test(ua)) return "chrome";
   return "unknown";
-}
-
-function getInstallUrl(browser) {
-  if (browser === "firefox") return LINKS.firefoxStore;
-  if (browser === "edge") return LINKS.edgeStore;
-  if (browser === "opera") return LINKS.operaStore;
-  if (browser === "chrome") return LINKS.chromeStore;
-  return LINKS.releaseLatest;
 }
 
 function getBrowserLabel(browser) {
@@ -54,11 +40,6 @@ async function loadBuildFiles() {
   return response.json();
 }
 
-function setLink(id, href) {
-  const el = document.getElementById(id);
-  if (el) el.href = href;
-}
-
 async function initPage() {
   const browser = detectBrowser();
   const installLink = document.getElementById("smartInstallLink");
@@ -68,15 +49,9 @@ async function initPage() {
   const downloadChromium = document.getElementById("downloadChromium");
   const downloadFirefox = document.getElementById("downloadFirefox");
 
-  installLink.href = getInstallUrl(browser);
+  installLink.href = "#";
   latestReleaseLink.href = LINKS.releaseLatest;
   browserLabel.textContent = getBrowserLabel(browser);
-
-  setLink("installChrome", LINKS.chromeStore);
-  setLink("installFirefox", LINKS.firefoxStore);
-  setLink("installEdge", LINKS.edgeStore);
-  setLink("installOpera", LINKS.operaStore);
-  setLink("updateStoreLink", getInstallUrl(browser));
 
   try {
     const manifest = await loadBuildFiles();
@@ -92,11 +67,18 @@ async function initPage() {
       downloadFirefox.textContent = `Скачать Firefox (${formatSize(firefoxFile.sizeBytes)})`;
     }
 
+    if (browser === "firefox" && firefoxFile) {
+      installLink.href = firefoxFile.path;
+    } else if (chromiumFile) {
+      installLink.href = chromiumFile.path;
+    }
+
     const dt = new Date(manifest.generatedAt);
     buildInfo.textContent = `Версия: ${manifest.version}. Сборки обновлены: ${dt.toLocaleString()}.`;
   } catch (error) {
     buildInfo.textContent =
       "Файлы сборки пока не опубликованы. Выполните npm run build:site и закоммитьте docs/downloads.";
+    installLink.href = LINKS.releaseLatest;
   }
 }
 

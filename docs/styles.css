@@ -280,4 +280,8 @@ details p {
     align-items: flex-start;
     flex-direction: column;
   }
+
+  .actions .btn {
+    width: 100%;
+  }
 }

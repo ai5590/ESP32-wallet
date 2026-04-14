@@ -1,19 +1,19 @@
 {
   "project": "ESP32-wallet",
   "version": "0.1.0",
-  "generatedAt": "2026-04-13T15:30:43.326Z",
+  "generatedAt": "2026-04-14T11:24:24.370Z",
   "files": [
     {
       "browser": "chromium",
       "name": "esp-wallet-chromium.zip",
       "path": "./downloads/esp-wallet-chromium.zip",
-      "sizeBytes": 1122048
+      "sizeBytes": 1122110
     },
     {
       "browser": "firefox",
       "name": "esp-wallet-firefox.zip",
       "path": "./downloads/esp-wallet-firefox.zip",
-      "sizeBytes": 1122091
+      "sizeBytes": 1122153
     }
   ]
 }

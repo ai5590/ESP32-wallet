@@ -12,6 +12,11 @@
 
       <p id="status" class="status">Загрузка запроса...</p>
 
+      <div class="actions top-actions">
+        <button id="approveButton" class="primary" type="button">Да, подписать</button>
+        <button id="rejectButton" class="secondary" type="button">Нет, отмена</button>
+      </div>
+
       <section class="card">
         <p class="label">Сайт</p>
         <code id="origin" class="value">—</code>
@@ -79,11 +84,6 @@
         <p class="label">Инструкции / данные</p>
         <pre id="details" class="pre">—</pre>
       </section>
-
-      <div class="actions">
-        <button id="rejectButton" class="secondary" type="button">Отклонить</button>
-        <button id="approveButton" class="primary" type="button">Подтвердить</button>
-      </div>
     </main>
 
     <script src="./confirm.js"></script>
